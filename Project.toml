@@ -3,7 +3,13 @@ uuid = "900dd30e-34bf-4e23-831d-6809554238a5"
 authors = ["Takafumi Arakaki <aka.tkf@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+Pkg = "44cfe95a-1eb2-52ea-b672-e2afdf69b78f"
+SHA = "ea8e919c-243c-51af-8825-aaa63cd721ce"
+Scratch = "6c6a2e73-6563-6170-7368-637461726353"
+
 [compat]
+Scratch = "1.0.2"
 julia = "1"
 
 [extras]
