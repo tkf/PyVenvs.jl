@@ -1,0 +1,7 @@
+name = "CLIVenvExample"
+uuid = "8dc45fe6-85bd-4fb6-92dd-f39ff83bbf6d"
+authors = ["Takafumi Arakaki <aka.tkf@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+PyVenvs = "900dd30e-34bf-4e23-831d-6809554238a5"
