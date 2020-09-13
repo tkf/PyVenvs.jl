@@ -1,3 +1,8 @@
 [deps]
+Aqua = "4c88cf16-eb10-579e-8560-4a9242c79595"
 PyCall = "438e738f-606a-5dbb-bf0a-cddfbfd45ab0"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+Aqua = "0.4.8"
+PyCall = "1.90"
