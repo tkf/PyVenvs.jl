@@ -5,7 +5,7 @@ using Test
     file for file in readdir(@__DIR__) if match(r"^test_.*\.jl$", file) !== nothing
 ])
     if file == "test_pycall.jl"
-        if lowercase(get(ENV, "CI", "false")) == "true"
+        if lowercase(get(ENV, "CI", "false")) != "true"
             @info "Skip $file"
             continue
         end
