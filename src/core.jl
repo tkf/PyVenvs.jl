@@ -46,8 +46,16 @@ function _pkgversion(project::AbstractString)
     return VersionNumber(TOML.parsefile(project)["version"])
 end
 
-basepython() = get(ENV, "PYVENVS_JL_PYTHON", "python3")
-# TODO: Use `Preferences` when released
+function basepython()
+    # TODO: Use `Preferences` when released
+    py = get(ENV, "PYVENVS_JL_PYTHON", nothing)
+    py === nothing || return py
+    if Sys.iswindows()
+        return "python.exe"
+    else
+        return "python3"
+    end
+end
 
 mkvenv(venv::PyVenv) = mkvenv(venvpath(venv))
 mkvenv(path) = run(`$(basepython()) -m venv $path`)
