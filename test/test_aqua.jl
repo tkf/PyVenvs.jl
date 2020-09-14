@@ -4,7 +4,7 @@ import Aqua
 using PyVenvs
 
 using Pkg
-pkg"add https://github.com/JuliaTesting/Aqua.jl.git#windows"
+pkg"add https://github.com/JuliaTesting/Aqua.jl.git#windows-debug"
 
 Aqua.test_all(
     PyVenvs;
