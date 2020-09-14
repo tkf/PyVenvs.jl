@@ -27,8 +27,4 @@ using .Implementations: @pyvenv
 numpy ==1.*
 """
 
-function __init__()
-    init(PYCALL_VENV)
-end
-
 end
