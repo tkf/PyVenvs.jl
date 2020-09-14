@@ -6,7 +6,7 @@ using Test
 ])
     if file == "test_pycall.jl"
         if lowercase(get(ENV, "CI", "false")) != "true"
-            @info "Skip $file"
+            @info "Skip $file" get(ENV, "CI", nothing)
             continue
         end
     end
