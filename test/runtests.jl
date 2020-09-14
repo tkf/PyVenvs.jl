@@ -8,9 +8,6 @@ using Test
         if lowercase(get(ENV, "CI", "false")) != "true"
             @info "Skip $file" get(ENV, "CI", nothing)
             continue
-        elseif Sys.iswindows()
-            @info "Skip $file on Windows"
-            continue
         end
     end
     include(file)
