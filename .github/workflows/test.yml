@@ -9,14 +9,24 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+          - windows-latest
+        architecture: [x64, x86]
         julia-version: ['1.5', 'nightly']
         python-version: ['3.8']
-        architecture: [x64]
+        exclude:
+          - os: ubuntu-latest
+            architecture: x86
+          - os: macos-latest
+            architecture: x86
       fail-fast: false
     name: Test
+      ${{ matrix.os }} ${{ matrix.architecture }}
       Julia ${{ matrix.julia-version }}
       Python ${{ matrix.python-version }}
     steps:
@@ -25,6 +35,7 @@ jobs:
         uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.julia-version }}
+          arch: ${{ matrix.architecture }}
       - name: Setup python
         uses: actions/setup-python@v1
         with:
