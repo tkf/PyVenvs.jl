@@ -1,10 +1,10 @@
 module TestAqua
 
-import Aqua
-using PyVenvs
-
 using Pkg
 pkg"add https://github.com/JuliaTesting/Aqua.jl.git#windows-debug"
+
+import Aqua
+using PyVenvs
 
 Aqua.test_all(
     PyVenvs;
