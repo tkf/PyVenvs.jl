@@ -18,7 +18,6 @@ end
     @test occursin(r"[0-9]+\.[0-9]+\.[0-9]+", read(`$py --version`, String))
     @test occursin(r"\bpip\b", readstd(PyVenvs.pip(CLI_VENV, `help`)))
     @test occursin("pygmentize", readstd(pygmentize(`-h`)))
-    @info "DEBUGGING" readdir(PyVenvs.Implementations.binpath(CLI_VENV))
     if Sys.iswindows()
         @test_broken occursin("rst2html", readstd(rst2html(`--help`)))
     else
